@@ -1,0 +1,1229 @@
+{
+ "cases": [
+  {
+   "fn": "budget",
+   "args": [
+    "90",
+    [
+     "25",
+     "40",
+     "15"
+    ]
+   ],
+   "expect": "The 3 apps take 80 minutes of the 90-minute budget, 10 minutes left."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "Messages",
+    "25",
+    "80"
+   ],
+   "expect": "Messages takes 25 minutes, 31% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "Shorts",
+    "40",
+    "80"
+   ],
+   "expect": "Shorts takes 40 minutes, 50% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "Maps",
+    "15",
+    "80"
+   ],
+   "expect": "Maps takes 15 minutes, 19% of the total."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "25",
+     "40",
+     "15"
+    ]
+   ],
+   "expect": "At this pace the week takes 560 minutes, 9 hours 20 minutes."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "90",
+    "3"
+   ],
+   "expect": "An even split of the 90-minute budget over the 3 apps gives 30 minutes each, 0 minutes spare."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "1",
+    [
+     "1"
+    ]
+   ],
+   "expect": "The 1 app takes 1 minute of the 1-minute budget, 0 minutes left."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "Solo",
+    "1",
+    "1"
+   ],
+   "expect": "Solo takes 1 minute, 100% of the total."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "1"
+    ]
+   ],
+   "expect": "At this pace the week takes 7 minutes, 0 hours 7 minutes."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "1",
+    "1"
+   ],
+   "expect": "An even split of the 1-minute budget over the 1 app gives 1 minute each, 0 minutes spare."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "60",
+    [
+     "30",
+     "30"
+    ]
+   ],
+   "expect": "The 2 apps take 60 minutes of the 60-minute budget, 0 minutes left."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "30",
+    [
+     "31"
+    ]
+   ],
+   "expect": "The 1 app takes 31 minutes of the 30-minute budget, 1 minute over."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "90",
+    "7"
+   ],
+   "expect": "An even split of the 90-minute budget over the 7 apps gives 12 minutes each, 6 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "1440",
+    "12"
+   ],
+   "expect": "An even split of the 1440-minute budget over the 12 apps gives 120 minutes each, 0 minutes spare."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "1440",
+     "1440",
+     "1440",
+     "1440",
+     "1440",
+     "1440",
+     "1440",
+     "1440",
+     "1440",
+     "1440",
+     "1440",
+     "1440"
+    ]
+   ],
+   "expect": "At this pace the week takes 120960 minutes, 2016 hours 0 minutes."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "979",
+    [
+     "807",
+     "259",
+     "168",
+     "983",
+     "1196"
+    ]
+   ],
+   "expect": "The 5 apps take 3413 minutes of the 979-minute budget, 2434 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "1008",
+    [
+     "18",
+     "1303",
+     "569",
+     "732",
+     "1386"
+    ]
+   ],
+   "expect": "The 5 apps take 4008 minutes of the 1008-minute budget, 3000 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "667",
+    [
+     "1275"
+    ]
+   ],
+   "expect": "The 1 app takes 1275 minutes of the 667-minute budget, 608 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "194",
+    [
+     "1056",
+     "114",
+     "1105"
+    ]
+   ],
+   "expect": "The 3 apps take 2275 minutes of the 194-minute budget, 2081 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "592",
+    [
+     "391",
+     "116"
+    ]
+   ],
+   "expect": "The 2 apps take 507 minutes of the 592-minute budget, 85 minutes left."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "373",
+    [
+     "704",
+     "242",
+     "933",
+     "918"
+    ]
+   ],
+   "expect": "The 4 apps take 2797 minutes of the 373-minute budget, 2424 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "1083",
+    [
+     "669",
+     "1244"
+    ]
+   ],
+   "expect": "The 2 apps take 1913 minutes of the 1083-minute budget, 830 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "1322",
+    [
+     "103",
+     "561",
+     "1295"
+    ]
+   ],
+   "expect": "The 3 apps take 1959 minutes of the 1322-minute budget, 637 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "1044",
+    [
+     "682",
+     "1271",
+     "1173"
+    ]
+   ],
+   "expect": "The 3 apps take 3126 minutes of the 1044-minute budget, 2082 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "1053",
+    [
+     "696",
+     "68",
+     "715"
+    ]
+   ],
+   "expect": "The 3 apps take 1479 minutes of the 1053-minute budget, 426 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "575",
+    [
+     "1084",
+     "130"
+    ]
+   ],
+   "expect": "The 2 apps take 1214 minutes of the 575-minute budget, 639 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "661",
+    [
+     "827",
+     "1079",
+     "897",
+     "421"
+    ]
+   ],
+   "expect": "The 4 apps take 3224 minutes of the 661-minute budget, 2563 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "440",
+    [
+     "1058",
+     "1303",
+     "878",
+     "1264",
+     "605"
+    ]
+   ],
+   "expect": "The 5 apps take 5108 minutes of the 440-minute budget, 4668 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "456",
+    [
+     "1219",
+     "931",
+     "457",
+     "343",
+     "412"
+    ]
+   ],
+   "expect": "The 5 apps take 3362 minutes of the 456-minute budget, 2906 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "953",
+    [
+     "1185",
+     "459",
+     "1096",
+     "1163",
+     "1361"
+    ]
+   ],
+   "expect": "The 5 apps take 5264 minutes of the 953-minute budget, 4311 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "268",
+    [
+     "414"
+    ]
+   ],
+   "expect": "The 1 app takes 414 minutes of the 268-minute budget, 146 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "592",
+    [
+     "1338",
+     "1264",
+     "224"
+    ]
+   ],
+   "expect": "The 3 apps take 2826 minutes of the 592-minute budget, 2234 minutes over."
+  },
+  {
+   "fn": "budget",
+   "args": [
+    "83",
+    [
+     "313",
+     "693",
+     "178"
+    ]
+   ],
+   "expect": "The 3 apps take 1184 minutes of the 83-minute budget, 1101 minutes over."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App186",
+    "208",
+    "5637"
+   ],
+   "expect": "App186 takes 208 minutes, 4% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App413",
+    "994",
+    "1039"
+   ],
+   "expect": "App413 takes 994 minutes, 96% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App421",
+    "578",
+    "2128"
+   ],
+   "expect": "App421 takes 578 minutes, 27% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App392",
+    "328",
+    "5379"
+   ],
+   "expect": "App392 takes 328 minutes, 6% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App471",
+    "1046",
+    "3154"
+   ],
+   "expect": "App471 takes 1046 minutes, 33% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App362",
+    "562",
+    "2723"
+   ],
+   "expect": "App362 takes 562 minutes, 21% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App410",
+    "1166",
+    "2372"
+   ],
+   "expect": "App410 takes 1166 minutes, 49% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App79",
+    "926",
+    "2527"
+   ],
+   "expect": "App79 takes 926 minutes, 37% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App669",
+    "737",
+    "3472"
+   ],
+   "expect": "App669 takes 737 minutes, 21% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App712",
+    "1201",
+    "1201"
+   ],
+   "expect": "App712 takes 1201 minutes, 100% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App372",
+    "1440",
+    "7786"
+   ],
+   "expect": "App372 takes 1440 minutes, 18% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App280",
+    "413",
+    "1017"
+   ],
+   "expect": "App280 takes 413 minutes, 41% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App874",
+    "503",
+    "3669"
+   ],
+   "expect": "App874 takes 503 minutes, 14% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App105",
+    "1425",
+    "6649"
+   ],
+   "expect": "App105 takes 1425 minutes, 21% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App989",
+    "1044",
+    "3066"
+   ],
+   "expect": "App989 takes 1044 minutes, 34% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App963",
+    "707",
+    "6984"
+   ],
+   "expect": "App963 takes 707 minutes, 10% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App131",
+    "636",
+    "2582"
+   ],
+   "expect": "App131 takes 636 minutes, 25% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App122",
+    "608",
+    "4038"
+   ],
+   "expect": "App122 takes 608 minutes, 15% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App762",
+    "642",
+    "6665"
+   ],
+   "expect": "App762 takes 642 minutes, 10% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App232",
+    "785",
+    "6825"
+   ],
+   "expect": "App232 takes 785 minutes, 12% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App350",
+    "506",
+    "3245"
+   ],
+   "expect": "App350 takes 506 minutes, 16% of the total."
+  },
+  {
+   "fn": "share",
+   "args": [
+    "App782",
+    "1000",
+    "8731"
+   ],
+   "expect": "App782 takes 1000 minutes, 11% of the total."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "1158",
+     "414",
+     "82",
+     "772",
+     "957",
+     "610",
+     "500",
+     "1099",
+     "1149"
+    ]
+   ],
+   "expect": "At this pace the week takes 47187 minutes, 786 hours 27 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "681",
+     "981",
+     "461",
+     "529",
+     "104",
+     "195"
+    ]
+   ],
+   "expect": "At this pace the week takes 20657 minutes, 344 hours 17 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "34",
+     "304",
+     "707",
+     "1332",
+     "280",
+     "673",
+     "65"
+    ]
+   ],
+   "expect": "At this pace the week takes 23765 minutes, 396 hours 5 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "631",
+     "46",
+     "442",
+     "205",
+     "284",
+     "713"
+    ]
+   ],
+   "expect": "At this pace the week takes 16247 minutes, 270 hours 47 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "1410",
+     "532",
+     "282",
+     "935",
+     "1017",
+     "94",
+     "932",
+     "982",
+     "741",
+     "1283"
+    ]
+   ],
+   "expect": "At this pace the week takes 57456 minutes, 957 hours 36 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "885",
+     "1163"
+    ]
+   ],
+   "expect": "At this pace the week takes 14336 minutes, 238 hours 56 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "408",
+     "212",
+     "270",
+     "1317",
+     "1124",
+     "94",
+     "353",
+     "795"
+    ]
+   ],
+   "expect": "At this pace the week takes 32011 minutes, 533 hours 31 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "275"
+    ]
+   ],
+   "expect": "At this pace the week takes 1925 minutes, 32 hours 5 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "386",
+     "134",
+     "1169",
+     "716",
+     "129",
+     "402",
+     "1251",
+     "465",
+     "90",
+     "706",
+     "762",
+     "425"
+    ]
+   ],
+   "expect": "At this pace the week takes 46445 minutes, 774 hours 5 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "237",
+     "1019",
+     "861",
+     "728",
+     "64",
+     "89",
+     "897",
+     "1017"
+    ]
+   ],
+   "expect": "At this pace the week takes 34384 minutes, 573 hours 4 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "929",
+     "29",
+     "809",
+     "808",
+     "559",
+     "1049",
+     "888"
+    ]
+   ],
+   "expect": "At this pace the week takes 35497 minutes, 591 hours 37 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "112",
+     "370",
+     "1354",
+     "363"
+    ]
+   ],
+   "expect": "At this pace the week takes 15393 minutes, 256 hours 33 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "863",
+     "794",
+     "1380",
+     "22"
+    ]
+   ],
+   "expect": "At this pace the week takes 21413 minutes, 356 hours 53 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "294",
+     "56",
+     "1120",
+     "540",
+     "677",
+     "301",
+     "797",
+     "123",
+     "406"
+    ]
+   ],
+   "expect": "At this pace the week takes 30198 minutes, 503 hours 18 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "1038",
+     "992",
+     "1374",
+     "882",
+     "869",
+     "131"
+    ]
+   ],
+   "expect": "At this pace the week takes 37002 minutes, 616 hours 42 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "719",
+     "1200",
+     "768",
+     "588",
+     "1239",
+     "412",
+     "713",
+     "933"
+    ]
+   ],
+   "expect": "At this pace the week takes 46004 minutes, 766 hours 44 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "161",
+     "697",
+     "562",
+     "1417",
+     "830",
+     "1126"
+    ]
+   ],
+   "expect": "At this pace the week takes 33551 minutes, 559 hours 11 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "1351",
+     "371"
+    ]
+   ],
+   "expect": "At this pace the week takes 12054 minutes, 200 hours 54 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "783",
+     "480",
+     "122",
+     "466",
+     "499",
+     "500"
+    ]
+   ],
+   "expect": "At this pace the week takes 19950 minutes, 332 hours 30 minutes."
+  },
+  {
+   "fn": "week",
+   "args": [
+    [
+     "1162",
+     "457",
+     "834",
+     "1024",
+     "1044",
+     "437",
+     "247",
+     "1015"
+    ]
+   ],
+   "expect": "At this pace the week takes 43540 minutes, 725 hours 40 minutes."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "1373",
+    "11"
+   ],
+   "expect": "An even split of the 1373-minute budget over the 11 apps gives 124 minutes each, 9 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "643",
+    "3"
+   ],
+   "expect": "An even split of the 643-minute budget over the 3 apps gives 214 minutes each, 1 minute spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "752",
+    "11"
+   ],
+   "expect": "An even split of the 752-minute budget over the 11 apps gives 68 minutes each, 4 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "602",
+    "4"
+   ],
+   "expect": "An even split of the 602-minute budget over the 4 apps gives 150 minutes each, 2 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "404",
+    "4"
+   ],
+   "expect": "An even split of the 404-minute budget over the 4 apps gives 101 minutes each, 0 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "34",
+    "8"
+   ],
+   "expect": "An even split of the 34-minute budget over the 8 apps gives 4 minutes each, 2 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "377",
+    "2"
+   ],
+   "expect": "An even split of the 377-minute budget over the 2 apps gives 188 minutes each, 1 minute spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "669",
+    "1"
+   ],
+   "expect": "An even split of the 669-minute budget over the 1 app gives 669 minutes each, 0 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "1094",
+    "5"
+   ],
+   "expect": "An even split of the 1094-minute budget over the 5 apps gives 218 minutes each, 4 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "482",
+    "10"
+   ],
+   "expect": "An even split of the 482-minute budget over the 10 apps gives 48 minutes each, 2 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "213",
+    "8"
+   ],
+   "expect": "An even split of the 213-minute budget over the 8 apps gives 26 minutes each, 5 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "1296",
+    "3"
+   ],
+   "expect": "An even split of the 1296-minute budget over the 3 apps gives 432 minutes each, 0 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "1026",
+    "2"
+   ],
+   "expect": "An even split of the 1026-minute budget over the 2 apps gives 513 minutes each, 0 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "1247",
+    "1"
+   ],
+   "expect": "An even split of the 1247-minute budget over the 1 app gives 1247 minutes each, 0 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "709",
+    "5"
+   ],
+   "expect": "An even split of the 709-minute budget over the 5 apps gives 141 minutes each, 4 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "219",
+    "1"
+   ],
+   "expect": "An even split of the 219-minute budget over the 1 app gives 219 minutes each, 0 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "1007",
+    "7"
+   ],
+   "expect": "An even split of the 1007-minute budget over the 7 apps gives 143 minutes each, 6 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "1350",
+    "4"
+   ],
+   "expect": "An even split of the 1350-minute budget over the 4 apps gives 337 minutes each, 2 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "253",
+    "3"
+   ],
+   "expect": "An even split of the 253-minute budget over the 3 apps gives 84 minutes each, 1 minute spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "379",
+    "2"
+   ],
+   "expect": "An even split of the 379-minute budget over the 2 apps gives 189 minutes each, 1 minute spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "412",
+    "3"
+   ],
+   "expect": "An even split of the 412-minute budget over the 3 apps gives 137 minutes each, 1 minute spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "490",
+    "12"
+   ],
+   "expect": "An even split of the 490-minute budget over the 12 apps gives 40 minutes each, 10 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "1406",
+    "1"
+   ],
+   "expect": "An even split of the 1406-minute budget over the 1 app gives 1406 minutes each, 0 minutes spare."
+  },
+  {
+   "fn": "split",
+   "args": [
+    "915",
+    "8"
+   ],
+   "expect": "An even split of the 915-minute budget over the 8 apps gives 114 minutes each, 3 minutes spare."
+  }
+ ],
+ "errors": [
+  [
+   "budget",
+   [
+    "0",
+    [
+     "30"
+    ]
+   ]
+  ],
+  [
+   "budget",
+   [
+    "1441",
+    [
+     "30"
+    ]
+   ]
+  ],
+  [
+   "budget",
+   [
+    "2.5",
+    [
+     "30"
+    ]
+   ]
+  ],
+  [
+   "budget",
+   [
+    "90",
+    [
+     "0"
+    ]
+   ]
+  ],
+  [
+   "budget",
+   [
+    "90",
+    [
+     "1441"
+    ]
+   ]
+  ],
+  [
+   "budget",
+   [
+    "90",
+    [
+     "1.5"
+    ]
+   ]
+  ],
+  [
+   "budget",
+   [
+    "90",
+    []
+   ]
+  ],
+  [
+   "share",
+   [
+    "",
+    "25",
+    "80"
+   ]
+  ],
+  [
+   "share",
+   [
+    "XXXXXXXXXXXXXXXXXXXXXXXXX",
+    "25",
+    "80"
+   ]
+  ],
+  [
+   "share",
+   [
+    "App",
+    "0",
+    "80"
+   ]
+  ],
+  [
+   "share",
+   [
+    "App",
+    "25",
+    "0"
+   ]
+  ],
+  [
+   "week",
+   [
+    [
+     "0"
+    ]
+   ]
+  ],
+  [
+   "week",
+   [
+    [
+     "1441"
+    ]
+   ]
+  ],
+  [
+   "week",
+   [
+    []
+   ]
+  ],
+  [
+   "split",
+   [
+    "0",
+    "3"
+   ]
+  ],
+  [
+   "split",
+   [
+    "90",
+    "0"
+   ]
+  ],
+  [
+   "split",
+   [
+    "90",
+    "13"
+   ]
+  ],
+  [
+   "split",
+   [
+    "2.5",
+    "3"
+   ]
+  ],
+  [
+   "budget",
+   [
+    "90",
+    [
+     "10",
+     "10",
+     "10",
+     "10",
+     "10",
+     "10",
+     "10",
+     "10",
+     "10",
+     "10",
+     "10",
+     "10",
+     "10"
+    ]
+   ]
+  ],
+  [
+   "share",
+   [
+    "App",
+    "1441",
+    "2000"
+   ]
+  ]
+ ]
+}
