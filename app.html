@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scroll Math - app</title>
+<style>
+  :root { --accent:#5b5fa6; --ink:#1e1f3a; --paper:#f4f4fb; --soft:#e6e7f5; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:Georgia, "Times New Roman", serif; background:var(--paper); color:var(--ink); line-height:1.55; }
+  main { max-width:660px; margin:0 auto; }
+  .boundary { background:#fdeaea; border-left:6px solid #b03030; color:#5c1c1c; border-radius:6px; padding:1rem 1.1rem; }
+  .boundary strong { display:block; margin-bottom:.3rem; }
+  body { padding:2rem 1.2rem; }
+  h1 { font-size:1.8rem; color:var(--accent); }
+  .boundary { margin:1rem 0 1.4rem; }
+  .panel { background:var(--soft); border-left:5px solid var(--accent); border-radius:6px; padding:1rem 1.1rem; margin-bottom:1.1rem; }
+  h2 { font-size:1.1rem; margin-bottom:.6rem; }
+  p.note { font-size:.9rem; margin-bottom:.4rem; }
+  label { display:block; font-size:.9rem; margin:.45rem 0 .1rem; }
+  input { width:100%; padding:.45rem .55rem; font-size:1rem; border:1px solid #b9bce0; border-radius:6px; background:#fff; color:var(--ink); }
+  .row2 { display:grid; grid-template-columns:1fr 1fr; gap:.6rem; }
+  .appr { display:grid; grid-template-columns:1.6fr 1fr auto; gap:.6rem; margin-bottom:.5rem; align-items:end; }
+  button.del { background:#fff; color:#8a1f1f; border:1px solid #b9bce0; border-radius:6px; padding:.45rem .6rem; font-size:.85rem; cursor:pointer; }
+  button.add { background:var(--accent); color:#fff; border:0; border-radius:6px; padding:.5rem .9rem; font-size:.9rem; cursor:pointer; margin-top:.2rem; }
+  .out { margin-top:.7rem; font-size:.98rem; background:#fff; border:1px dashed #b9bce0; border-radius:6px; padding:.6rem .7rem; min-height:2.4rem; overflow-wrap:anywhere; }
+  .out.err { border-color:#b03030; color:#8a1f1f; }
+  .shares p { margin:.2rem 0; }
+  footer { margin-top:1.8rem; font-size:.85rem; color:#8f92c0; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Scroll Math</h1>
+  <div class="boundary">
+    <strong>Boundary: arithmetic only</strong>
+    This page counts a day's screen minutes with addition, subtraction and division: the minutes left or over against a budget, each app's share of the total, the weekly pace, and an even split. It uses no named constants. The budget, the apps and their minutes are yours to decide and read off your own screen-time report. It applies the counting as written, so it has not seen your phone, your apps or your day and does not know whether the minutes are really spent the way you entered, the budget is right for you or tomorrow will look like today, and it gives no verdict that an app is worth its minutes or a budget is healthy. Every number here is your own entry.
+  </div>
+
+  <div class="panel">
+    <h2>The budget truth</h2>
+    <p class="note">Budget: the app's minutes added up against the day's budget, with what is left or over.</p>
+    <label for="b-n">Budget (minutes a day)</label><input id="b-n" type="text" value="90">
+    <div id="rows">
+      <div class="appr"><div><label>App</label><input class="aname" type="text" value="Messages"></div><div><label>Minutes</label><input class="amins" type="text" value="25"></div><button class="del" type="button">remove</button></div>
+      <div class="appr"><div><label>App</label><input class="aname" type="text" value="Shorts"></div><div><label>Minutes</label><input class="amins" type="text" value="40"></div><button class="del" type="button">remove</button></div>
+      <div class="appr"><div><label>App</label><input class="aname" type="text" value="Maps"></div><div><label>Minutes</label><input class="amins" type="text" value="15"></div><button class="del" type="button">remove</button></div>
+    </div>
+    <button class="add" id="add" type="button">add an app</button>
+    <div class="out" id="b-out"></div>
+  </div>
+  <div class="panel">
+    <h2>The share truth</h2>
+    <p class="note">Share: each app's minutes as a share of the day's total, half rounded up.</p>
+    <div class="out shares" id="s-out"></div>
+  </div>
+  <div class="panel">
+    <h2>The week truth</h2>
+    <p class="note">Week: today's total times seven, in minutes and in hours and minutes.</p>
+    <div class="out" id="w-out"></div>
+  </div>
+  <div class="panel">
+    <h2>The split truth</h2>
+    <p class="note">Split: the budget divided evenly over the entered apps, with what is spare.</p>
+    <div class="out" id="p-out"></div>
+  </div>
+
+  <footer>Scroll Math is exact arithmetic over the numbers you enter. <a href="index.html">Why it exists</a>.</footer>
+</main>
+<script src="engine.js"></script>
+<script>
+  const rowsEl = document.getElementById("rows");
+  function readRows() {
+    return [...rowsEl.querySelectorAll(".appr")].map((r) => ({
+      name: r.querySelector(".aname").value,
+      mins: r.querySelector(".amins").value,
+    }));
+  }
+  function show(id, fn) {
+    const out = document.getElementById(id);
+    try { out.textContent = fn(); out.classList.remove("err"); }
+    catch (e) { out.textContent = e.message; out.classList.add("err"); }
+  }
+  function recalc() {
+    const rows = readRows();
+    const mins = rows.map((r) => r.mins);
+    const budget = document.getElementById("b-n").value;
+    if (rows.length === 0) {
+      ["b-out", "s-out", "w-out", "p-out"].forEach((id) => {
+        const out = document.getElementById(id);
+        out.textContent = "add an app to start counting.";
+        out.classList.remove("err");
+      });
+      return;
+    }
+    show("b-out", () => budgetTruth(budget, mins));
+    const sOut = document.getElementById("s-out");
+    try {
+      const total = mins.reduce((a, m) => a + _i(m, _M, 4, 1, 1440), 0);
+      sOut.classList.remove("err");
+      sOut.replaceChildren(...rows.map((r) => {
+        const p = document.createElement("p");
+        try { p.textContent = shareTruth(r.name, r.mins, String(total)); }
+        catch (e) { p.textContent = e.message; }
+        return p;
+      }));
+    } catch (e) { sOut.textContent = e.message; sOut.classList.add("err"); }
+    show("w-out", () => weekTruth(mins));
+    show("p-out", () => splitTruth(budget, String(rows.length)));
+  }
+  function addRow(name, mins) {
+    const div = document.createElement("div");
+    div.className = "appr";
+    const d1 = document.createElement("div"), d2 = document.createElement("div");
+    const l1 = document.createElement("label"), l2 = document.createElement("label");
+    l1.textContent = "App"; l2.textContent = "Minutes";
+    const i1 = document.createElement("input"), i2 = document.createElement("input");
+    i1.className = "aname"; i1.type = "text"; i1.value = name;
+    i2.className = "amins"; i2.type = "text"; i2.value = mins;
+    const del = document.createElement("button");
+    del.className = "del"; del.type = "button"; del.textContent = "remove";
+    d1.append(l1, i1); d2.append(l2, i2);
+    div.append(d1, d2, del);
+    rowsEl.appendChild(div);
+    wire(div);
+  }
+  function wire(scope) {
+    scope.querySelectorAll("input").forEach((el) => {
+      el.addEventListener("input", recalc);
+      el.addEventListener("change", recalc);
+    });
+    scope.querySelectorAll(".del").forEach((el) => {
+      el.addEventListener("click", (e) => { e.target.closest(".appr").remove(); recalc(); });
+    });
+  }
+  document.getElementById("b-n").addEventListener("input", recalc);
+  document.getElementById("add").addEventListener("click", () => {
+    if (rowsEl.querySelectorAll(".appr").length < 12) addRow("", "");
+    recalc();
+  });
+  wire(document);
+  recalc();
+</script>
+</body>
+</html>
